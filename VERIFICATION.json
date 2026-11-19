@@ -1,0 +1,37 @@
+{
+  "render_runs": [
+    {
+      "bytes": 376640,
+      "sha256": "1fb99ad21c67fad9ac7d16be042621407fffe31cfcad67ae0e8af798932eb943",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "stories": 12,
+      "illustrations": 8
+    },
+    {
+      "bytes": 376640,
+      "sha256": "1fb99ad21c67fad9ac7d16be042621407fffe31cfcad67ae0e8af798932eb943",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "stories": 12,
+      "illustrations": 8
+    }
+  ],
+  "runtime_output_sha256": [
+    "1fb99ad21c67fad9ac7d16be042621407fffe31cfcad67ae0e8af798932eb943",
+    "1fb99ad21c67fad9ac7d16be042621407fffe31cfcad67ae0e8af798932eb943"
+  ],
+  "runtime": "Python -I -S, current UID 1000, empty environment, source mode 0555 and files 0444, 512 MiB memory limit; changing to UID 65534 was refused by the OS",
+  "corruption_rejection_cases": 4,
+  "text_boxes_in_bounds": 20,
+  "visual_review": "Vision unavailable; full-size OCR comparison completed for four competitors and own image. This is not visual approval.",
+  "official_transcript_check": {
+    "ok": true,
+    "failed": []
+  },
+  "submission_created": false
+}

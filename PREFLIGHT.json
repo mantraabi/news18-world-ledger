@@ -1,0 +1,205 @@
+{
+  "competition": "news-image-20261118",
+  "phase": "dev",
+  "kit": "/home/devabi/project/makefun/news18-intake/news-image-20261118-kit",
+  "repo": "/home/devabi/project/makefun/news18-world-ledger",
+  "commit": "worktree@878ff4a1b38b",
+  "source": "worktree",
+  "source_bundle": false,
+  "received_at": "2026-11-19T03:37:50.189Z",
+  "transcripts": "/home/devabi/project/makefun/news18-intake/transcripts.tar.gz",
+  "env_file": null,
+  "checks": [
+    {
+      "check": "competition_open",
+      "phase": "intake",
+      "title": "Competition is not taking entries",
+      "status": "pass",
+      "reason": "now (2026-11-19T03:37:50.189Z) is between the opening, 2026-11-18T00:00:00.000Z, and the entry deadline, 2026-11-20T00:00:00.000Z; the site also checks the competition is open when you submit",
+      "fix": null
+    },
+    {
+      "check": "snapshot",
+      "phase": "local",
+      "title": "Repository within the intake caps",
+      "status": "pass",
+      "reason": "13 files, 504,423 bytes at worktree@878ff4a1b38b: within the intake's caps (each file at most 100 MiB, at most 100,000 entries, the archive at most 1 GiB and the repository at most 512 MiB)",
+      "fix": null
+    },
+    {
+      "check": "license_osi",
+      "phase": "intake",
+      "title": "No OSI-approved license",
+      "status": "pass",
+      "reason": "LICENSE declares SPDX-License-Identifier: MIT, OSI-approved",
+      "fix": null
+    },
+    {
+      "check": "entrypoint",
+      "phase": "local",
+      "title": "Entrypoint at the root",
+      "status": "pass",
+      "reason": "main.py at the root selects python3.13, which news-image-20261118 accepts",
+      "fix": null
+    },
+    {
+      "check": "strategy_note",
+      "phase": "local",
+      "title": "Strategy note at the root",
+      "status": "skip",
+      "reason": "news-image-20261118 does not ask for a strategy note",
+      "fix": null
+    },
+    {
+      "check": "committed_secret",
+      "phase": "intake",
+      "title": "Entry's history holds a submitted secret",
+      "status": "skip",
+      "reason": "no --dotenv given, so no secret value to look for here: when you submit, the site reads the entry's whole history for every form of each secret you pushed for news-image-20261118 (makefun secrets push); pass --dotenv <the .env you push> to look for them here first",
+      "fix": null
+    },
+    {
+      "check": "transcripts_present",
+      "phase": "transcripts",
+      "title": "No transcripts parsed",
+      "status": "pass",
+      "reason": "1 agent session parsed (1 hermes)",
+      "fix": null
+    },
+    {
+      "check": "transcripts_recorded",
+      "phase": "transcripts",
+      "title": "Sessions handed over, not recorded",
+      "status": "pass",
+      "reason": "every session is a log a harness recorded or a file exported from its record (1 session)",
+      "fix": null
+    },
+    {
+      "check": "thinking_wellformed",
+      "phase": "transcripts",
+      "title": "Transcripts are malformed or name no harness",
+      "status": "pass",
+      "reason": "1 session, 177 messages: every timestamp present and in order, 82 tool results each answering its own earlier call",
+      "fix": null
+    },
+    {
+      "check": "thinking_in_window",
+      "phase": "transcripts",
+      "title": "Transcript activity outside the window",
+      "status": "pass",
+      "reason": "all 176 timestamps lie between the opening at 2026-11-18T00:00:00.000Z and the receipt at 2026-11-19T03:37:50.189Z",
+      "fix": null
+    },
+    {
+      "check": "thinking_committed",
+      "phase": "transcripts",
+      "title": "Transcripts differ from the signed entry",
+      "status": "skip",
+      "reason": "the entry is not signed: no entry message commits its transcripts; where the prizes are escrowed, submit --keypair signs the entry message over exactly the transcripts it uploads, and the site checks it at submission",
+      "fix": null
+    },
+    {
+      "check": "thinking_reproduces",
+      "phase": "transcripts",
+      "title": "Transcripts do not account for the code",
+      "status": "pass",
+      "reason": "the agent's own writing accounts for 307 of 633 counted lines (48.4%: 307 authored, 5 copied, 0 pasted, 293 read, 28 absent), at least 30% required; 26 of 631 counted lines of text files are unwritten (4.1%: 26 absent, 0 read in files an import command brought in), at most 40% allowed; the entrypoint main.py has 54 authored lines",
+      "fix": null
+    },
+    {
+      "check": "thinking_on_task",
+      "phase": "transcripts",
+      "title": "Transcripts are off task",
+      "status": "skip",
+      "reason": "the harness names no task terms",
+      "fix": null
+    },
+    {
+      "check": "thinking_turns",
+      "phase": "transcripts",
+      "title": "Too few assistant turns with text or thinking",
+      "status": "pass",
+      "reason": "34 assistant turns with text or thinking, at least 5 required",
+      "fix": null
+    },
+    {
+      "check": "thinking_priced",
+      "phase": "transcripts",
+      "title": "Usage records missing or impossible",
+      "status": "pass",
+      "reason": "no usage record to price",
+      "fix": null
+    },
+    {
+      "check": "thinking_revised",
+      "phase": "transcripts",
+      "title": "No file revised across assistant messages",
+      "status": "pass",
+      "reason": "tools/render.py takes its final content from 5 messages that write or edit it (the entrypoint main.py from 4), at least 2 required",
+      "fix": null
+    },
+    {
+      "check": "thinking_fresh",
+      "phase": "transcripts",
+      "title": "Transcripts predate their anchor",
+      "status": "skip",
+      "reason": "the entry's repository has no beacon root (a GitHub repository), so there is no anchor for its transcripts to quote",
+      "fix": null
+    },
+    {
+      "check": "transcripts_run_record",
+      "phase": "transcripts",
+      "title": "Run record missing or contradicted",
+      "status": "pass",
+      "reason": "the run record matches the upload: a typed prompt, the agent facts, a system prompt uploaded, instruction files collected (2), no MCP server listed and every one the sessions used among them",
+      "fix": null
+    },
+    {
+      "check": "repo_public",
+      "phase": "intake",
+      "title": "Repository is not public",
+      "status": "submission",
+      "reason": "the site reads the repository from GitHub when you submit: it must be public then",
+      "fix": "Make /home/devabi/project/makefun/news18-world-ledger public, then submit again before 2026-11-20T00:00:00.000Z."
+    },
+    {
+      "check": "repo_owner",
+      "phase": "intake",
+      "title": "Repository is not proven yours",
+      "status": "submission",
+      "reason": "its GitHub owner must be your account's GitHub login, or the commit must carry .makefun/owner.json naming one of your account's entry wallets (a wallet linked to it, or a connected agent's wallet)",
+      "fix": "Commit .makefun/owner.json containing {\"wallet\": \"<your wallet address>\"} to /home/devabi/project/makefun/news18-world-ledger (a wallet on your account; with none, add one first: node cli/makefun.mjs wallet add --keypair <file>, run from inside the unpacked kit; POST /api/me/wallets, signed by the wallet; or link one on your profile), push it, and submit that new commit's sha before 2026-11-20T00:00:00.000Z; or submit it from an account signed in with GitHub as the repository's owner."
+    },
+    {
+      "check": "repo_created_after_open",
+      "phase": "intake",
+      "title": "Repository predates the competition",
+      "status": "submission",
+      "reason": "GitHub's creation time of the repository must be at or after the opening, 2026-11-18T00:00:00.000Z",
+      "fix": "Create a new repository (after 2026-11-18T00:00:00.000Z), push your work to it, and submit it before 2026-11-20T00:00:00.000Z. For a source bundle, start the new repository's history after 2026-11-18T00:00:00.000Z with (cd <your repository> && node <the unpacked kit>/cli/makefun.mjs init --license MIT --keypair <your keypair file>) (its first commit is the drand anchor) and commit your work on top of it."
+    },
+    {
+      "check": "commit_in_repo",
+      "phase": "intake",
+      "title": "Commit is not in the repository",
+      "status": "submission",
+      "reason": "the commit you submit must be pushed to a branch of the repository",
+      "fix": "Push the commit to /home/devabi/project/makefun/news18-world-ledger, or submit a commit that is there, before 2026-11-20T00:00:00.000Z."
+    },
+    {
+      "check": "duplicate_snapshot",
+      "phase": "intake",
+      "title": "Same files as an earlier entry",
+      "status": "submission",
+      "reason": "the files must differ from every other account's earlier entry: an unchanged starter or baseline is refused once someone has entered it",
+      "fix": "Submit your own work: an entry's files must differ from every other account's earlier entry's. Submit it before 2026-11-20T00:00:00.000Z."
+    }
+  ],
+  "failed": [],
+  "notes": [
+    "the files of /home/devabi/project/makefun/news18-world-ledger as they are were checked, not a commit: the site takes the commit you submit",
+    "gitleaks is not installed: the transcripts were redacted with the built-in rules only (the site also runs gitleaks; a secret only gitleaks finds could change authorship)",
+    "grading is the server's, not check's: there is no local grade of this competition, the server grades every entry, and the entry's status shows its score (RULES.txt, Before you submit)"
+  ],
+  "ok": true
+}
